@@ -31,12 +31,46 @@ This project  is done using the Kaggle *Student Mental Health* dataset (download
 
 ## Setup
 
-1. Install uv (if not installed):
-2. Initialize the project:
-
-uv init
-
+1. Install uv
+2. Intialize the project:
+      uv init
 3. Create virtual environment and install dependencies:
-Add Scikit-Learn and FastAPI
-uv add scikit-learn fastapi uvicorn
-5. 
+      uv add scikit-learn fastapi uvicorn
+4. Add development dependency
+      uv add --dev requests
+
+## Usage
+1. Train the model
+      python scripts/train_model.py
+2. Run the API locally
+      uvicorn app.main:app --reload
+3. Test the API
+      python scripts/test_api.py
+
+### API Endpoints
+  - GET /: Health check
+  - GET /health: API status
+  - POST /predict: Predict mental health risk
+
+## Deployment
+1. Build and run with Docker
+    docker build -t mental-health-api .
+    docker run -p 8000:8000 mental-health-api
+2. Deploy to Fly.io
+    flyctl auth login
+    flyctl deploy
+3. Test with curl
+curl -X POST "http://localhost:8000/predict" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "Gender": "Female",
+       "Age": 21,
+       "Course": "Engineering", 
+       "YearOfStudy": "Year 2",
+       "CGPA": 3.2,
+       "StudyStressLevel": 4,
+       "SleepQuality": 2,
+       "StudyHoursPerWeek": 25,
+       "AcademicEngagement": 3,
+       "SymptomFrequency_Last7Days": 5
+     }'
