@@ -31,6 +31,12 @@ This project  is done using the Kaggle *Student Mental Health* dataset (download
 
 ## Setup
 
-1. **Install uv** (if not installed):
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+1. Install uv (if not installed):
+2. Initialize the project:
+
+uv init
+
+3. Create virtual environment and install dependencies:
+Add Scikit-Learn and FastAPI
+uv add scikit-learn fastapi uvicorn
+5. 
