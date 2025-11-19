@@ -60,21 +60,17 @@ This project  is done using the Kaggle *Student Mental Health* dataset (download
     flyctl auth login
     flyctl deploy
 3. Test with curl
-curl -X POST "http://localhost:8000/predict" \ 
-
-     -H "Content-Type: application/json" \ 
-     
-     -d '{ 
-     
-       "Gender": "Female",
-   
-       "Age": 21,
-       "Course": "Engineering", 
-       "YearOfStudy": "Year 2",
-       "CGPA": 3.2,
-       "StudyStressLevel": 4,
-       "SleepQuality": 2,
-       "StudyHoursPerWeek": 25,
-       "AcademicEngagement": 3,
-       "SymptomFrequency_Last7Days": 5
+curl -X POST "http://localhost:8000/predict" \  <br>
+     -H "Content-Type: application/json" \  <br>
+       -d '{   <br>    
+       "Gender": "Female",  <br>
+       "Age": 21,  <br>
+       "Course": "Engineering",   <br>
+       "YearOfStudy": "Year 2",  <br>
+       "CGPA": 3.2,  <br>
+       "StudyStressLevel": 4,  <br>
+       "SleepQuality": 2,  <br>
+       "StudyHoursPerWeek": 25,  <br>
+       "AcademicEngagement": 3,  <br>
+       "SymptomFrequency_Last7Days": 5  <br>
      }'
