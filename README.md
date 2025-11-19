@@ -62,7 +62,7 @@ This project  is done using the Kaggle *Student Mental Health* dataset (download
 3. Test with curl
 curl -X POST "http://localhost:8000/predict" \  <br>
      -H "Content-Type: application/json" \  <br>
-       -d '{   <br>    
+       -d '{        
        "Gender": "Female",  <br>
        "Age": 21,  <br>
        "Course": "Engineering",   <br>
