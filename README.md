@@ -60,9 +60,9 @@ This project  is done using the Kaggle *Student Mental Health* dataset (download
     flyctl auth login
     flyctl deploy
 3. Test with curl
-curl -X POST "http://localhost:8000/predict" \
-     -H "Content-Type: application/json" \
-     -d '{
+curl -X POST "http://localhost:8000/predict" \ \n
+     -H "Content-Type: application/json" \ \n
+     -d '{ \n
        "Gender": "Female",
        "Age": 21,
        "Course": "Engineering", 
